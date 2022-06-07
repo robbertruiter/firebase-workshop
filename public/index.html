@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script type="module">
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyCOfxQnMDYg14SP2V_Yf0PEg3B68PewFGM",
+        authDomain: "inholland-todo.firebaseapp.com",
+        projectId: "inholland-todo",
+        storageBucket: "inholland-todo.appspot.com",
+        messagingSenderId: "353302160869",
+        appId: "1:353302160869:web:316b44a395ad7a75ccbb0c",
+      };
+
+      // Initialize Firebase
+      const app = firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="app.js" defer></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Faker/3.1.0/faker.min.js"
+      integrity="sha512-/seDHxVfh1NvFUscAj8GsHQVZJvr2jjAoYsNL7As2FCaFHUHYIarl3sRCvVlFgyouVNiRgHIebyLKjpgd1SLDw=="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <h1>InHolland todo app</h1>
+    <section id="whenSignedOut">
+      <button id="signInBtn" class="btn btn-primary">
+        Sign in with Google
+      </button>
+    </section>
+    <section id="whenSignedIn" display="none">
+      <div id="userDetails"></div>
+      <button id="signOutBtn" class="btn btn-primary">Sign out</button>
+      <section>
+        <ul id="todoList"></ul>
+        <div>
+          <input type="text" id="todoInput" placeholder="New todo" />
+        </div>
+        <button id="addTodoBtn" class="btn btn-primary">Add todo</button>
+      </section>
+      <section>
+        <form id="editForm" display="none">
+          <input type="text" id="editInput" />
+          <input type="hidden" id="editId" />
+          <button id="editBtn" class="btn btn-primary" type="submit">
+            Edit
+          </button>
+        </form>
+      </section>
+    </section>
+  </body>
+</html>
